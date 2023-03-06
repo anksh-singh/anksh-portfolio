@@ -9,7 +9,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Ankit Singh</title>
+  <!-- <title>Ankit Singh</title> -->
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -46,7 +46,7 @@
   <header id="header">
     <div class="container">
 
-      <h1>Ankit Singh</h1>
+      <!-- <h1>Ankit Singh</h1> -->
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
       <h2>A <span>software engineer</span> who likes to build things and solve real world issues with tool & technologies.</h2>
@@ -385,8 +385,6 @@
     </div>
   </section><!-- End Resume Section -->
 
-
-
   
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="contact">
@@ -456,7 +454,8 @@
 
     </div> -->
 
-    <form action="submit_email.php" method="post">
+    <form action="submit_email" method="post">
+      {% csrf_token %} 
       <!-- <label for="email">Email:</label> -->
       <input type="email" id="email" name="email" placeholder="Your email address" required>
       <button type="submit">Join</button>
