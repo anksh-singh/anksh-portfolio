@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.mail import send_mail
 from .forms import EmailForm
+from django.core.mail import send_mail
 # from .forms import EmailForm
 
 # Create your views here.
@@ -22,7 +23,13 @@ def submit_email(request):
         form = EmailForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data['email']
-            #send_mail('New Email Submission', email, 'from@example.com', ['to@example.com'])
+            send_mail(
+            'New email submission',
+            f'The following email was submitted: {email}',
+            '',
+            [''],
+            fail_silently=False,
+        )
             #return render(request, 'success.html')
     else:
         form = EmailForm()
