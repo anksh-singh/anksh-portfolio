@@ -22,11 +22,8 @@ def submit_email(request):
         form = EmailForm(request.POST)
         if form.is_valid():
             email = form.cleaned_data['email']
-            print("email", email)
-
-
-            # send_mail('New Email Submission', email, 'from@example.com', ['to@example.com'])
-            # return render(request, 'success.html')
+            #send_mail('New Email Submission', email, 'from@example.com', ['to@example.com'])
+            #return render(request, 'success.html')
     else:
         form = EmailForm()
 
