@@ -15,7 +15,8 @@ def about(request):
     return render(request, 'about.html')
 
 
-# def email_form(request):
+def submit_email(request):
+    return HttpResponse('Thank you for contacting us!')
 #     if request.method == 'POST':
 #         form = EmailForm(request.POST)
 #         if form.is_valid():
