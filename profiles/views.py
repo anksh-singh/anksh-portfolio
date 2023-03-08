@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.core.mail import send_mail
 from .forms import EmailForm
+from decouple import config
 
 # Create your views here.
 
@@ -24,8 +25,8 @@ def submit_email(request):
             send_mail(
             'New email submission',
             f'The following email was submitted: {email}',
-            '',
-            [''],
+            config('EMAIL_HOST_USER'),
+            [config('EMAIL_HOST_USER')],
             fail_silently=False,
         )
             #return render(request, 'success.html')
